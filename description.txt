@@ -1,0 +1,7 @@
+This mod is the experimentation and implementation of projectile concepts. Test these out either by waiting for the merchant and buying it if you feel like getting them in the legit way, or just craft them with a single block of dirt. Please post a comment on the thread page on these experimental items!
+Changelog for v2.1:
+- Added Midas Sprayer : Clentimator but more fun!
+   - Can be bought by the Custom Weapons Developer
+   - Buy Mining Solutions and craft any Solution with 11 ore (Ore found in world like iron, this includes hellstone and obsidian!)
+   - Each unique solution causes a unique debuff!
+- Changed Shadow Blood Veil so it doesn't leech health off of friendly NPCs

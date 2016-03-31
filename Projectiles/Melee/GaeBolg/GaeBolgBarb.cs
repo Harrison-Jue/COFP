@@ -21,11 +21,6 @@ namespace COFP.Projectiles.Melee.GaeBolg
 			projectile.ignoreWater = true;
 			projectile.melee = true;
 		}
-		public override void AI()
-        {
-			int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width, projectile.height, 24, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 0.25f);
-			projectile.light = 0.9f;
-		}
 		public override void OnHitNPC(NPC n, int damage, float knockback, bool crit)
 		{
 			projectile.position.X = n.Center.X;

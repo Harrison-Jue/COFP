@@ -12,7 +12,7 @@ namespace COFP.Items.Ammo.Plane_Arrows
 		public override void SetDefaults()
 		{
 			item.name = "Paper Airplane Arrow";
-			item.damage = 30;
+			item.damage = 60;
 			item.summon = true;
 			item.width = 14;
 			item.height = 32;
@@ -29,13 +29,13 @@ namespace COFP.Items.Ammo.Plane_Arrows
 
 		public override void AddRecipes()
 		{
-			if(MMod.testMode)
-			{
-				ModRecipe recipe = new ModRecipe(mod);
-				recipe.AddIngredient(ItemID.DirtBlock);
-				recipe.SetResult(this);
-				recipe.AddRecipe();
-			}
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.WoodenArrow, 25);
+			recipe.AddIngredient(ItemID.Wood, 5);
+			recipe.AddIngredient(ItemID.PixieDust, 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this, 25);
+			recipe.AddRecipe();
 		}
 	}
 }

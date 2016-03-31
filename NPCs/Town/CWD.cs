@@ -48,46 +48,28 @@ namespace COFP.NPCs.Town
 		}
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
-			shop.item[nextSlot].SetDefaults(mod.ItemType("ShadowBloodVeil"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("BomberPlaneArrow"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("FighterPlaneArrow"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("PaperAirplaneArrow"));
-			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("ControllableSaw"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("BurningSaw"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("HallowedSaw"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("SpectralSaw"));
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("AncientSpear"));
 			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("GaeBolg"));
-			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("AncientBow"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("Ichiival"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("RainbowDevastation"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("PDTCore"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("CarrierBow"));
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("BottledFairy"));
 			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("MidasSprayer"));
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("MiningSolution"));
-			nextSlot++;
+			if(Main.player[Main.myPlayer].HasItem(mod.ItemType("CarrierBow")))
+			{
+				shop.item[nextSlot].SetDefaults(mod.ItemType("PaperAirplaneArrow"));
+				nextSlot++;
+			}
+			if(Main.player[Main.myPlayer].HasItem(mod.ItemType("MidasSprayer")))
+			{
+				shop.item[nextSlot].SetDefaults(mod.ItemType("MiningSolution"));
+				nextSlot++;
+			}
 		}
 		public override string GetChat()
 		{
-			string chat = "I sell things.";
+			string chat = "I sell basic COFP supplies.";
 			return chat;
 		}
 	}

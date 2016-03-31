@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace COFP.Projectiles.NPCProj.Berramyr
 {
@@ -45,6 +46,11 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 				}
 			}
 			projectile.ai[0] += 1f;
+		}
+		
+		public override void OnHitPlayer(Player target, int damage, bool crit)
+		{
+			target.AddBuff(BuffID.OnFire, 180, false);
 		}
 	}
 }

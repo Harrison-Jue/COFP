@@ -34,7 +34,7 @@ namespace COFP.NPCs.Berramyr
 			bool exists = false;
 			int Berramyr = 0;
 			
-			for(int i = 0; i < Main.npc.Length; i++)
+			for(int i = 0; i < Main.npc.Length - 1; i++)
 			{
 				if(Main.npc[i].type == mod.NPCType("Berramyr"))
 				{
@@ -54,10 +54,43 @@ namespace COFP.NPCs.Berramyr
 			double rad = deg * (Math.PI / 180);
 			double dist = 150; 
 			
+			if(!npc.dontTakeDamage)
+			{
+				if(npc.ai[0] % 120 == 0)
+				{
+					MNPC.healNPC(Main.npc[Berramyr], 1000);
+				}
+				if(npc.ai[0] % 300 == 0 && Main.netMode != 1)
+				{
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0, 0, mod.ProjectileType("Berraheal"), 0, 0f, Main.myPlayer, Berramyr, 5000);
+				}
+			}
+			
 			npc.position.X = Main.npc[Berramyr].Center.X - (int)(Math.Cos(rad) * dist) - npc.width/2;
 			npc.position.Y = Main.npc[Berramyr].Center.Y - (int)(Math.Sin(rad) * dist) - npc.height/2;
-		  
+
+			if(npc.ai[2] == 1)
+			{
+				if(npc.ai[0] % 30 == 0)
+				{
+					for(int i = 225; i <= 315; i += 15)
+					{
+						float shotAngle = (float)(i*(Math.PI/180));
+						float speedY = (float)Math.Sin(shotAngle) * 10f;
+						float speedX = (float)Math.Cos(shotAngle) * 10f;
+						int proj1 = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, speedX, -speedY, mod.ProjectileType("Berrabullet"), 10, 0f, Main.myPlayer, 0f, 0f);
+						Main.projectile[proj1].timeLeft = 9999;
+						Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 11);
+					}
+				}
+			}
+			if(npc.ai[2] == 2)
+			{
+				MNPC.entrapment(npc, Berramyr, rad);
+			}
+			
 			npc.ai[0] += 1f;
+			npc.netUpdate = true;
 		}
 		public override bool StrikeNPC(ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit)
 		{

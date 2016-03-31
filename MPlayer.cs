@@ -20,6 +20,29 @@ namespace COFP
 		public static bool altFire;
 		public static float healPowerMult = 1f;
 		
+		//Great method for healing players
+		public static void healPlayer(Player player, int healPower)
+		{
+			int heal = (int) ((float)healPower * healPowerMult);
+			player.statLife += heal;
+			if(player.statLife > player.statLifeMax2)
+			{
+				player.statLife = player.statLifeMax2;
+			}
+			player.HealEffect(heal, true);
+		}
+		
+		//Great method for giving mana to players
+		public static void starPlayer(Player player, int starPower)
+		{
+			player.statMana += starPower;
+			if(player.statMana > player.statManaMax2)
+			{
+				player.statMana = player.statManaMax2;
+			}
+			player.ManaEffect(starPower);
+		}
+		
 		public static void ResetPlayerEffects() //Just sets all properties to false
 		{
 			hasProjectile = false;
@@ -29,6 +52,7 @@ namespace COFP
 			altFire = false;
 		}
 		
+		//Stuff that happens after an update
 		public override void PostUpdate()
 		{
 			if(Main.myPlayer == player.whoAmI)
@@ -127,6 +151,8 @@ namespace COFP
 				}
 			}
 		}
+		
+		//Makes player spawn immediately after kill if testmode is on
 		public override void Kill(double damage, int hitDirection, bool pvp, string deathText)
 		{
 			if(MMod.testMode)

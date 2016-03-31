@@ -21,6 +21,22 @@ namespace COFP
 				projectile.oldPos[num46] = projectile.oldPos[num46 - 1];
 			}
 			projectile.oldPos[0] = projectile.position;
+			
+			if(projectile.aiStyle == -2)
+			{
+				int lSlot = NPC.FindFirstNPC(mod.NPCType("Lyndmyl"));
+				if(lSlot >= 0)
+				{
+					NPC lyndmyl = Main.npc[lSlot];
+					float dX = lyndmyl.Center.X - projectile.Center.X;
+					float dY = lyndmyl.Center.Y - projectile.Center.Y;
+					float distance = (float)Math.Sqrt((double)(dX * dX + dY * dY));
+					float speed = 15f;
+					speed /= distance;
+					
+					projectile.velocity = new Vector2(dX * speed, dY * speed);
+				}
+			}
 		}
 		
 		//Static method to help mediate AI of the projectile that changes tiles

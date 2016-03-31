@@ -12,7 +12,7 @@ namespace COFP.Items.Melee.Saws
 		public override void SetDefaults()
 		{
 			item.name = "Controllable Saw";
-			item.damage = 20;
+			item.damage = 13;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
@@ -28,7 +28,7 @@ namespace COFP.Items.Melee.Saws
 			item.noUseGraphic = true;
 			item.useTurn = true;
 			item.useStyle = 5;
-			item.value = Item.sellPrice(0, 0, 10, 0);
+			item.value = Item.buyPrice(0, 1, 0, 0);
 			item.rare = 5;
 			item.shoot = mod.ProjectileType("Saw");
 			item.shootSpeed = 5f;
@@ -39,6 +39,15 @@ namespace COFP.Items.Melee.Saws
 			{
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.DirtBlock);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddCraftGroup(mod.GetCraftGroup("T2Bar"), 10);
+				recipe.AddIngredient(ItemID.Sawmill, 1);
+				recipe.AddTile(TileID.Anvils);
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}

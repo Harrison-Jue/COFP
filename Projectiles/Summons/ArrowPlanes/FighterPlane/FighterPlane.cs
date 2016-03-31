@@ -135,11 +135,11 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 			//If the previous npc fits all requirements and is not blocked by a tile, shoot at the npc
 			if (flag28)
 			{
-				if (!Collision.SolidCollision(projectile.position, projectile.width, projectile.height) && projectile.timeLeft % 8 == 0)
+				if (!Collision.SolidCollision(projectile.position, projectile.width, projectile.height) && projectile.timeLeft % 15 == 0)
 				{
 					if (Main.myPlayer == projectile.owner && Main.netMode != 1)
 					{
-						int num739 = Projectile.NewProjectile(projectile.position.X + projectile.width/2, projectile.position.Y + projectile.height/2, projectile.velocity.X * 2, projectile.velocity.Y * 2, mod.ProjectileType("FighterPlaneBullet"), projectile.damage, 0f, Main.myPlayer, 0f, 0f);
+						int num739 = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, projectile.velocity.X * 30, projectile.velocity.Y * 30, mod.ProjectileType("FighterPlaneBullet"), projectile.damage, 0f, Main.myPlayer, 0f, 0f);
 						Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 11);
 						Main.projectile[num739].netUpdate = true;
 						projectile.netUpdate = true;

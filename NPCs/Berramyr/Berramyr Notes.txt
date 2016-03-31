@@ -1,22 +1,32 @@
 Berramyr Moves to work on:
 
-Hellswarm - Launches lots of missiles at the player that destroys tiles
-Bullet Hell - Position above the player and shoot down on the player like a bullet hell game, use support as blockades (tiles, projectiles, themselves)
-Hellhole - Turns boss invisible and invulnerable, makes a hellhole, player has to go to hell to reactivate boss
-Entrapment - Seperate all the support and orbit around the player creating tiles in that orbit (each will have their own distance away from player)
+(done) Hellswarm - Launches lots of missiles at the player that destroys tiles
+(done) Bullet Hell - Position above the player and shoot down on the player like a bullet hell game, use support as blockades (tiles, projectiles, themselves)
+(done) Hellhole - Turns boss invisible and invulnerable, makes a hellhole, player has to go to hell to reactivate boss
+(done) Entrapment - Seperate all the support and orbit around the player creating tiles in that orbit (each will have their own distance away from player)
 
 Support cast
 
-Individual bullet hells when by themselves?
-Disable their active abilities after reaching 1 health.
-Allow at random to spawn blocks depending on color 
+(donno)Individual bullet hells when by themselves?
+(done)Disable their active abilities after reaching 1 health.
+(nope)Allow at random to spawn blocks depending on color 
    - Fokmyl: Stones
    - Lyndmyl: Clouds
    - Niremyl: Lava
    - Veiynamyl: Water
 
 
-Fokmyl - Takes 25% of damage from boss, give boss defense up and gives retaliation; fires healing bolts and red bolts that damage player for the amount healed
-Lyndmyl - Destroys projectiles, brings projectiles towards itself, gravity bolt
-Niremyl - Gives boss burning damage and melee damage; red bolts cause burning
-Veiynamyl - Heals and regenerates both the boss and itself, leech bolts
+Fokmyl 
+   - Takes 25% of damage from boss (done)
+   - give boss defense up and gives retaliation 
+   - fires healing bolts and red bolts that damage player for the amount healed?
+Lyndmyl 
+   - Destroys projectiles
+   - brings projectiles towards itself
+   - gravity bolt?
+Niremyl 
+   - Gives boss burning damage and melee damage
+   - red bolts cause burning?
+Veiynamyl 
+   - Heals and regenerates both the boss and itself
+   - leech bolts?

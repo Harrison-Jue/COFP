@@ -43,6 +43,17 @@ namespace COFP.Items.Magic
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(ItemID.RainbowRod, 1);
+				recipe.AddIngredient(ItemID.RainbowGun, 1);
+				recipe.AddIngredient(ItemID.RainbowCrystalStaff, 1);
+				recipe.AddIngredient(ItemID.LunarBar, 10);
+				recipe.AddTile(TileID.MythrilAnvil);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
 		}
 		public override DrawAnimation GetAnimation()
 		{

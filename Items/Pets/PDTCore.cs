@@ -27,6 +27,15 @@ namespace COFP.Items.Pets
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(ItemID.Seaweed, 1);
+				recipe.AddIngredient(ItemID.XenoStaff, 1);
+				recipe.AddIngredient(ItemID.LunarBar, 10);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
 		}
 
 		public override void UseStyle(Player player)

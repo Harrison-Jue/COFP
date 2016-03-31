@@ -24,13 +24,13 @@ namespace COFP.Items.Accessories
 		}
 		public override void AddRecipes()
 		{
-			if(MMod.testMode)
-			{
-				ModRecipe recipe = new ModRecipe(mod);
-				recipe.AddIngredient(ItemID.DirtBlock);
-				recipe.SetResult(this);
-				recipe.AddRecipe();
-			}
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Silk, 10);
+			recipe.AddCraftGroup(mod.GetCraftGroup("EvilBar"), 10);
+			recipe.AddCraftGroup(mod.GetCraftGroup("EvilSubstance"), 30);
+			recipe.AddCraftGroup(mod.GetCraftGroup("EvilPowder"), 30);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
     }
 }

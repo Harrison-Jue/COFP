@@ -66,7 +66,18 @@ namespace COFP.Items.Usables
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(ItemID.Clentaminator, 1);
+				recipe.AddIngredient(ItemID.Picksaw, 1);
+				recipe.AddIngredient(ItemID.Ectoplasm, 20);
+				recipe.AddIngredient(ItemID.GoldBar, 20);
+				recipe.AddIngredient(ItemID.GreenSolution, 999);
+				recipe.AddTile(TileID.MythrilAnvil);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
 		}
-		
     }
 }

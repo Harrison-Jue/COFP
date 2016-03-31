@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace COFP.Projectiles.NPCProj.Berramyr
 {
@@ -33,6 +34,22 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			}
 			projectile.ai[0] += 1f;
 		}
+		
+		public override void OnHitPlayer(Player target, int damage, bool crit)
+		{
+			for(int i = 0; i < Main.npc.Length - 1; i++)
+			{
+				NPC niremyl = Main.npc[i];
+				if(niremyl.type == mod.NPCType("Niremyl"))
+				{
+					if(!niremyl.dontTakeDamage)
+					{
+						target.AddBuff(BuffID.OnFire, 180, false);
+					}
+				}
+			}
+		}
+		
 		public override void Kill(int timeLeft)
 		{
 			for(int i = 0; i <= 360; i += 10)

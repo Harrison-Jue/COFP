@@ -73,32 +73,35 @@ namespace COFP.Projectiles.Magic
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-			//Destroy Tiles on Collied
-			int num101 = (int)(projectile.position.X / 16f);
-			int num102 = (int)((projectile.position.X + (float)projectile.width) / 16f) + 2;
-			int num103 = (int)(projectile.position.Y / 16f);
-			int num104 = (int)((projectile.position.Y + (float)projectile.height) / 16f) + 2;
-			if (num101 < 0)
+			if(MMod.tileDestruction)
 			{
-				num101 = 0;
-			}
-			if (num102 > Main.maxTilesX)
-			{
-				num102 = Main.maxTilesX;
-			}
-			if (num103 < 0)
-			{
-				num103 = 0;
-			}
-			if (num104 > Main.maxTilesY)
-			{
-				num104 = Main.maxTilesY;
-			}
-			for (int num105 = num101; num105 < num102; num105++)
-			{
-				for (int num106 = num103; num106 < num104; num106++)
+				//Destroy Tiles on Collied
+				int num101 = (int)(projectile.position.X / 16f);
+				int num102 = (int)((projectile.position.X + (float)projectile.width) / 16f) + 2;
+				int num103 = (int)(projectile.position.Y / 16f);
+				int num104 = (int)((projectile.position.Y + (float)projectile.height) / 16f) + 2;
+				if (num101 < 0)
 				{
-					WorldGen.KillTile(num105, num106);
+					num101 = 0;
+				}
+				if (num102 > Main.maxTilesX)
+				{
+					num102 = Main.maxTilesX;
+				}
+				if (num103 < 0)
+				{
+					num103 = 0;
+				}
+				if (num104 > Main.maxTilesY)
+				{
+					num104 = Main.maxTilesY;
+				}
+				for (int num105 = num101; num105 < num102; num105++)
+				{
+					for (int num106 = num103; num106 < num104; num106++)
+					{
+						WorldGen.KillTile(num105, num106);
+					}
 				}
 			}
 			

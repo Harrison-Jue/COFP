@@ -12,7 +12,7 @@ namespace COFP.Items.Melee.Saws
 		public override void SetDefaults()
 		{
 			item.name = "Spectral Saw";
-			item.damage = 120;
+			item.damage = 75;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
@@ -39,6 +39,19 @@ namespace COFP.Items.Melee.Saws
 			{
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.DirtBlock);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(mod.ItemType("HallowedSaw"), 1);
+				recipe.AddIngredient(ItemID.Ectoplasm, 20);
+				recipe.AddIngredient(ItemID.SoulofMight, 10);
+				recipe.AddIngredient(ItemID.SoulofFright, 10);
+				recipe.AddIngredient(ItemID.SoulofSight, 10);
+				recipe.AddIngredient(ItemID.Sawmill);
+				recipe.AddTile(TileID.MythrilAnvil);
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}

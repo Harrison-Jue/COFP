@@ -29,7 +29,7 @@ namespace COFP.Projectiles.Melee.GaeBolg
 			projectile.ai[1] -= 1f;
 			if ((int)projectile.ai[1] % 6 == 0 && projectile.owner == Main.myPlayer)
 			{
-				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0 + MathHelper.Lerp(-4f, 4f, (float)Main.rand.NextDouble()), 0 + MathHelper.Lerp(-4f, 4f, (float)Main.rand.NextDouble()), mod.ProjectileType("GaeBolgBarb"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0 + MathHelper.Lerp(-4f, 4f, (float)Main.rand.NextDouble()), 0 + MathHelper.Lerp(-4f, 4f, (float)Main.rand.NextDouble()), mod.ProjectileType("GaeBolgBarb"), projectile.damage/2, projectile.knockBack, projectile.owner, 0f, 0f);
 			}
 		}
 	}

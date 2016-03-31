@@ -21,11 +21,11 @@ namespace COFP.Projectiles.Melee.Saws
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
 			projectile.melee = true;
-			projectile.penetrate = 50;
+			projectile.penetrate = 30;
 		}
 		public override void AI()
         {
-			projectile.light = 0.9f;
+			projectile.light = 0.4f;
 			int DustID1 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 57, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f);
 			int DustID2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 57, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f);
 			int DustID3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 57, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f);

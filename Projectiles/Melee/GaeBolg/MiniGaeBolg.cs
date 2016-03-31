@@ -119,7 +119,7 @@ namespace COFP.Projectiles.Melee.GaeBolg
 						}
 						if (num670 > (float)projectile.damage * 0.1f)
 						{
-							Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("GaeBolgInferno"),  projectile.damage/4, projectile.knockBack * 0.55f, projectile.owner, 0f, (float)Main.rand.Next(3));
+							Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("GaeBolgInferno"),  projectile.damage, projectile.knockBack * 0.55f, projectile.owner, 0f, (float)Main.rand.Next(3));
 						}
 					}
 				}

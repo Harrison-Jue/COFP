@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace COFP.Projectiles.Melee.Saws
 {	
@@ -21,11 +22,11 @@ namespace COFP.Projectiles.Melee.Saws
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
 			projectile.melee = true;
-			projectile.penetrate = 25;
+			projectile.penetrate = 20;
 		}
 		public override void AI()
         {
-			projectile.light = 0.9f;
+			projectile.light = 0.4f;
 			int DustID1 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y ), projectile.width, projectile.height, 6, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f);
 			int DustID2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y ), projectile.width, projectile.height, 60, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f);
 			int DustID3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y ), projectile.width, projectile.height, 64, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f);
@@ -182,7 +183,7 @@ namespace COFP.Projectiles.Melee.Saws
 			//Give burning debuff to npc
 			if (Main.rand.Next(3) == 0) 
 			{ 
-				n.AddBuff(39, 300); 
+				n.AddBuff(BuffID.OnFire, 300); 
 			}
 		}
 	}

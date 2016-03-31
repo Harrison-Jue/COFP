@@ -12,13 +12,13 @@ namespace COFP.Items.Melee.Saws
 		public override void SetDefaults()
 		{
 			item.name = "Burning Saw";
-			item.damage = 40;
+			item.damage = 25;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
 			item.scale = 1.1f;
 			item.maxStack = 1;
-			item.toolTip = "A controllable saw that burns enemies and breaks after 25 hits.";
+			item.toolTip = "A controllable saw that burns enemies and breaks after 20 hits.";
 			item.useTime = 45;
 			item.useAnimation = 45;
 			item.knockBack = 4f;
@@ -39,6 +39,16 @@ namespace COFP.Items.Melee.Saws
 			{
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.DirtBlock);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(mod.ItemType("ControllableSaw"), 1);
+				recipe.AddIngredient(ItemID.HellstoneBar, 20);
+				recipe.AddIngredient(ItemID.Sawmill);
+				recipe.AddTile(TileID.Anvils);
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}

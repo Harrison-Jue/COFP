@@ -1,0 +1,23 @@
+Shadow Blood Veil - 10 Silk, 10 Crimtane/Demonite Bar, 30 Rotten Chunk/Vertebrae, 30 Vicious/Vile Powder; (Demon Altar)
+Bow of the Carrier - 1 Optic Staff, 1 Shadow Flame Bow, 10 Ectoplasm, 30 Wood; (Mythril Anvil)
+Paper Airplane Arrow (25) - 25 Wooden Arrow, 5 Wood, 5 Pixie Dust; (Mythril Anvil)
+Fighter Plane Arrow (25) - 25 Paper Airplane Arrow, 5 Iron/Lead Bar, 5 Pixie Dust; (Mythril Anvil)
+Bomber Plane Arrow (25) - 25 Paper Airplane Arrow, 5 Iron/Lead Bar, 5 Pixie Dust, 5 Bomb; (Mythril Anvil)
+Controllable Saw - 10 Iron/Lead Bar, 1 Sawmill; (Anvil)
+Burning Saw - 1 Controllable Saw, 20 Hellstone Bar, 1 Sawmill; (Anvil)
+Hallowed Saw - 1 Burning Saw, 20 Hallowed Bar, 10 Soul of Light, 10 Soul of Night, 1 Sawmill; (Mythril Anvil)
+Spectral Saw - 1 Hallowed Saw, 20 Ectoplasm , 10 Soul of Might, 10 Soul of Fright, 10 Soul of Sight, 1 Sawmill; (Mythril Anvil)
+Bottled Fairy - 1 Fairy Bell, 1 Fairy Wings, 30 Pixie Dust; (Mythril Anvil)
+Ancient Spear - 1 Spear, 30 Bone, 20 Iron/Lead Bar; (Anvil)
+Gae Bolg - 1 Ancient Spear, 1 Gungnir, 1 Inferno Fork, 10 Ectoplasm; (Mythril Anvil)
+Ancient Bow - 1 WoodenBow, 30 Bone, 20 Iron/Lead Bar; (Anvil)
+Ichiival - 1 Ancient Bow, 1 Daedalus Stormbow, 1 Tsunami, 10 Ectoplasm; (Mythril Anvil)
+Midas Sprayer - 1 Clentaminator, 1 Picksaw, 20 Ectoplasm, 20 Gold Bar, 999 Green Solution; (Mythril Anvil)
+PDT Core - 1 Seaweed, 1 Xeno Staff, 10 Luminite/Lunar Bar; (Mythril Anvil)
+Raindbow Devastation - 1 Rainbow Rod, 1 Rainbow Gun, 1 Rainbow Crystal Staff, 10 Luminite/Lunar Barl (Mythril Anvil)
+
+Solutions
+11 Ore + 111 Mining Solution
+
+For those interested in helping me test...
+Mysterious Controller - 1 Dirt Block

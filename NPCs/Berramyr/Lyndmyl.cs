@@ -32,9 +32,11 @@ namespace COFP.NPCs.Berramyr
 		public override void AI()
 		{
 			bool exists = false;
+			bool hasFired = false;
 			int Berramyr = 0;
+			int friendProjCount = 0;
 			
-			for(int i = 0; i < Main.npc.Length; i++)
+			for(int i = 0; i < Main.npc.Length - 1; i++)
 			{
 				if(Main.npc[i].type == mod.NPCType("Berramyr"))
 				{
@@ -48,6 +50,50 @@ namespace COFP.NPCs.Berramyr
 			{
 				npc.life -= npc.life;
 				npc.checkDead();
+			}
+			
+			if(!npc.dontTakeDamage)
+			{
+				for(int i = 0; i < 255; i++)
+				{
+					Player p = Main.player[i];
+					if(p.channel)
+					{
+						p.channel = false;
+					}
+				}
+				for(int i = 0; i < 1000; i++)
+				{
+					Projectile p = Main.projectile[i];
+					if(p.friendly && p.active && !p.melee && !p.minion)
+					{
+						if(npc.ai[0] % 300 == 0 && !hasFired)
+						{
+							float shootToX = p.Center.X - npc.Center.X; 
+							float shootToY = p.Center.Y - npc.Center.Y; 
+							float distance = (float)Math.Sqrt((double)(shootToX * shootToX + shootToY * shootToY));
+							float speed = 10f / distance;
+							shootToX *= speed; 
+							shootToY *= speed; 
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, shootToX, shootToY, mod.ProjectileType("Lyndwave"), 0, 0, Main.myPlayer, 0f, 0f);
+							hasFired = true;
+						}
+						friendProjCount++;
+					}
+				}
+				if(friendProjCount > 5)
+				{
+					for(int i = 0; i < 1000; i++ )
+					{
+						Projectile p = Main.projectile[i];
+						if(p.friendly && p.active && !p.melee && !p.minion)
+						{
+							p.aiStyle = -2;
+							p.penetrate = 1;
+							p.tileCollide = true;
+						}
+					}
+				}
 			}
 			
 			double deg = (double) npc.ai[0];
@@ -64,22 +110,25 @@ namespace COFP.NPCs.Berramyr
 				npc.position.Y = Main.npc[Berramyr].Center.Y - (npc.height / 2);
 				npc.position.X = npc.ai[3];
 				
-				for(int i = 0; i < 200; i++)
+				for(int i = 0; i < 255; i++)
 				{
 					Player p = Main.player[i];
 					if(p.active && !p.dead)
 					{
 						if(p.position.X > npc.position.X)
 						{
-							p.position.X = npc.position.X - 20;
+							p.position = p.oldPosition;
 						}
 					}
 				}
 			}
+			if(npc.ai[2] == 2)
+			{
+				MNPC.entrapment(npc, Berramyr, rad);
+			}
 			
-			
-		  
 			npc.ai[0] += 1f;
+			npc.netUpdate = true;
 		}
 		public override bool StrikeNPC(ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit)
 		{

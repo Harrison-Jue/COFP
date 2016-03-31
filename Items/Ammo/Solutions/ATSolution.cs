@@ -35,26 +35,16 @@ namespace COFP.Items.Ammo.Solutions
 		
 		public override void AddRecipes()
 		{
-			if(MMod.testMode)
-			{
-				ModRecipe recipe = new ModRecipe(mod);
-				recipe.AddIngredient(ItemID.DirtBlock);
-				recipe.SetResult(this, 111);
-				recipe.AddRecipe();
-			}
-			else
-			{
-				ModRecipe recipe = new ModRecipe(mod);
-				recipe.AddIngredient(ItemID.AdamantiteOre, 11);
-				recipe.AddIngredient(mod.ItemType("MiningSolution"), 111);
-				recipe.SetResult(this, 111);
-				recipe.AddRecipe();
-				recipe = new ModRecipe(mod);
-				recipe.AddIngredient(ItemID.TitaniumOre, 11);
-				recipe.AddIngredient(mod.ItemType("MiningSolution"), 111);
-				recipe.SetResult(this, 111);
-				recipe.AddRecipe();
-			}
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.AdamantiteOre, 11);
+			recipe.AddIngredient(mod.ItemType("MiningSolution"), 111);
+			recipe.SetResult(this, 111);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.TitaniumOre, 11);
+			recipe.AddIngredient(mod.ItemType("MiningSolution"), 111);
+			recipe.SetResult(this, 111);
+			recipe.AddRecipe();
 		}
 	}
 }

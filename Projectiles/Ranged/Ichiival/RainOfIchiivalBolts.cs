@@ -37,7 +37,7 @@ namespace COFP.Projectiles.Ranged.Ichiival
 				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
 				for(int a = 0; a < 2; a++)
 				{
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, MathHelper.Lerp(-4f, 4f, (float)Main.rand.NextDouble()) + MathHelper.Lerp(-4f, 0f, (float)Main.rand.NextDouble()), projectile.velocity.Y + MathHelper.Lerp(-16f, 16f, (float)Main.rand.NextDouble()), mod.ProjectileType("IchiivalFireball"), projectile.damage/4, 2, Main.myPlayer);
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, MathHelper.Lerp(-4f, 4f, (float)Main.rand.NextDouble()) + MathHelper.Lerp(-4f, 0f, (float)Main.rand.NextDouble()), projectile.velocity.Y + MathHelper.Lerp(-16f, 16f, (float)Main.rand.NextDouble()), mod.ProjectileType("IchiivalFireball"), projectile.damage/2, 2, Main.myPlayer);
 				}
 			}
 		}

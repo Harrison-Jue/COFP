@@ -34,7 +34,7 @@ namespace COFP.NPCs.Berramyr
 			bool exists = false;
 			int Berramyr = 0;
 			
-			for(int i = 0; i < Main.npc.Length; i++)
+			for(int i = 0; i < Main.npc.Length - 1; i++)
 			{
 				if(Main.npc[i].type == mod.NPCType("Berramyr"))
 				{
@@ -64,53 +64,25 @@ namespace COFP.NPCs.Berramyr
 				npc.position.Y = Main.npc[Berramyr].Center.Y - (npc.height / 2);
 				npc.position.X = npc.ai[3];
 			
-				for(int i = 0; i < 200; i++)
+				for(int i = 0; i < 255; i++)
 				{
 					Player p = Main.player[i];
 					if(p.active && !p.dead)
 					{
 						if(p.position.X < npc.position.X)
 						{
-							p.position.X = npc.position.X + 20;
+							p.position = p.oldPosition;
 						}
 					}
 				}
 			}
-			
-			/*if(npc.ai[0] % 60 == 0 && !npc.dontTakeDamage)
+			if(npc.ai[2] == 2)
 			{
-				int x = (int)(npc.Center.X / 16f); //Tile position X
-				int y = (int)(npc.Center.Y / 16f); //Tile position y
-				//If tile position X is less than 0, then set it to 0 since the x position can't be less than 0
-				if (x < 0)
-				{
-					x = 0;
-				}
-				//Same thing as X
-				if (y < 0)
-				{
-					y = 0;
-				}
-				
-				Tile tile = Main.tile[x, y];
-				if(Main.tile[x, y] == null || !Main.tile[x, y].active())
-				{
-					tile = new Tile();
-					Main.tile[x, y] = tile;
-					Main.tile[x, y].active(true);
-					Main.tile[x, y].type = (ushort)1;
-					WorldGen.SquareTileFrame(x, y, true);
-					NetMessage.SendTileSquare(-1, x, y, 1);
-				}
-				else
-				{
-					Main.tile[x, y].type = (ushort)1;
-					WorldGen.SquareTileFrame(x, y, true);
-					NetMessage.SendTileSquare(-1, x, y, 1);
-				}
-			}*/
+				MNPC.entrapment(npc, Berramyr, rad);
+			}
 			
 			npc.ai[0] += 1f;
+			npc.netUpdate = true;
 		}
 		public override bool StrikeNPC(ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit)
 		{

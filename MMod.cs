@@ -11,7 +11,8 @@ namespace COFP
 {
 	public class MMod : Mod
 	{
-		public static bool testMode = true;
+		public static bool testMode = false;
+		public static bool tileDestruction = true;
 		
 		public override void SetModInfo(out string name, ref ModProperties properties)
 		{
@@ -27,6 +28,52 @@ namespace COFP
 			AddTexture("MidasBackpack", GetTexture("Items/Usables/MidasBackpack"));
 		}
 		
+		public override void ChatInput(String text)
+		{
+			if (text[0] != '/')
+			{
+				return;
+			}
+			text = text.Substring(1);
+			int index = text.IndexOf(' ');
+			string command;
+			string[] args;
+			if (index < 0)
+			{
+				command = text;
+				args = new string[0];
+			}
+			else
+			{
+				command = text.Substring(0, index);
+				args = text.Substring(index + 1).Split(' ');
+			}
+			if(command == "tiledestruction")
+			{
+				if(tileDestruction)
+				{
+					tileDestruction = false;
+					Main.NewText("Tile Destruction disabled.");
+				}
+				else
+				{
+					tileDestruction = true;
+					Main.NewText("Tile Destruction enabled.");
+				}
+			}
+		}
+		
+		public override void AddCraftGroups()
+		{
+			AddCraftGroup("T2Bar", Lang.misc[37] + " Tier 2 Bars", ItemID.IronBar, ItemID.LeadBar);
+			AddCraftGroup("T4Bar", Lang.misc[37] + " Tier 3 Bars", ItemID.GoldBar, ItemID.PlatinumBar);
+			AddCraftGroup("EvilBar", Lang.misc[37] + " Evil Bar", ItemID.DemoniteBar, ItemID.CrimtaneBar);
+			AddCraftGroup("EvilSubstanceHM", Lang.misc[37] + " Hardmode Evil Substance", ItemID.Ichor, ItemID.CursedFlame);
+			AddCraftGroup("EvilSubstance", Lang.misc[37] + " Evil Substance", ItemID.RottenChunk, ItemID.Vertebrae);
+			AddCraftGroup("EvilPowder", Lang.misc[37] + " Evil Powder", ItemID.VilePowder, ItemID.ViciousPowder);
+		}
+		
+		//Simple way to add explosions to anyone since Entity is the base class for all things, you can use any extended classes on it
 		public static void explosionEffect(Entity entity, float scale)
 		{
 			Main.PlaySound(2, (int)entity.position.X, (int)entity.position.Y, 14);

@@ -16,6 +16,7 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 			projectile.height = 4;
 			projectile.scale = 0.75f;
 			projectile.aiStyle = 0;
+			projectile.timeLeft = 60;
 			projectile.friendly = true;
 			projectile.hostile = false;
 			projectile.tileCollide = true;
@@ -24,7 +25,7 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 		}
 		public override void AI()
 		{
-			projectile.light = 0.9f;
+			projectile.light = 0.6f;
 		}
 	}
 }

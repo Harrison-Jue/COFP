@@ -61,6 +61,22 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			extraAI += 1;
 		}
 		
+		
+		public override void OnHitPlayer(Player target, int damage, bool crit)
+		{
+			for(int i = 0; i < Main.npc.Length - 1; i++)
+			{
+				NPC niremyl = Main.npc[i];
+				if(niremyl.type == mod.NPCType("Niremyl"))
+				{
+					if(!niremyl.dontTakeDamage)
+					{
+						target.AddBuff(BuffID.OnFire, 180, false);
+					}
+				}
+			}
+		}
+		
 		public override void Kill(int timeLeft)
 		{
 			MMod.explosionEffect(projectile, 1f);

@@ -80,9 +80,6 @@ namespace COFP.Projectiles.Magic
 			//Rotating the Vortex
 			projectile.rotation += 0.3f;
 			
-			//Updating counter
-			projectile.ai[0] += 1f;
-			
 			//Spawning dust
 			int rand = Main.rand.Next(0, 6);
 			int DustID = Dust.NewDust(projectile.position, projectile.width, projectile.height, dusts[rand], projectile.velocity.X, projectile.velocity.Y, 0, default(Color), 1f);

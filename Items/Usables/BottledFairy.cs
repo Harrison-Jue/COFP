@@ -24,7 +24,7 @@ namespace COFP.Items.Usables
 			item.useSound = 11;
 			item.noMelee = true;
 			item.useStyle = 5;
-			item.value = Item.sellPrice(0, 1, 0, 0);
+			item.value = Item.buyPrice(0, 5, 0, 0);
 			item.rare = 9;
 			item.shoot = mod.ProjectileType("FleeingFairy");
 			item.shootSpeed = 40f;
@@ -37,6 +37,16 @@ namespace COFP.Items.Usables
 			{
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.DirtBlock);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(ItemID.FairyBell, 1);
+				recipe.AddIngredient(ItemID.FairyWings, 1);
+				recipe.AddIngredient(ItemID.PixieDust, 30);
+				recipe.AddTile(TileID.MythrilAnvil);
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}

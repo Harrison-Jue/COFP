@@ -12,7 +12,7 @@ namespace COFP.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Ichiival";
-			item.damage = 125;
+			item.damage = 100;
 			item.ranged = true;
 			item.width = 60;
 			item.height = 60;
@@ -52,6 +52,17 @@ namespace COFP.Items.Ranged
 			{
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.DirtBlock);
+				recipe.SetResult(this);
+				recipe.AddRecipe();
+			}
+			else
+			{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(mod.ItemType("AncientBow"), 1);
+				recipe.AddIngredient(ItemID.DaedalusStormbow, 1);
+				recipe.AddIngredient(ItemID.Tsunami, 1);
+				recipe.AddIngredient(ItemID.Ectoplasm, 10);
+				recipe.AddTile(TileID.Anvils);
 				recipe.SetResult(this);
 				recipe.AddRecipe();
 			}

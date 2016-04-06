@@ -14,18 +14,14 @@ namespace COFP
 		public static bool testMode = false;
 		public static bool tileDestruction = true;
 		
-		public override void SetModInfo(out string name, ref ModProperties properties)
+		public MMod()
 		{
-			name = "COFP";
-			properties.Autoload = true;
-			properties.AutoloadGores = true;
-			properties.AutoloadSounds = true;
-		}
-		
-		public override void Load()
-		{
-			//Add the texture Midas Backpack to the game
-			AddTexture("MidasBackpack", GetTexture("Items/Usables/MidasBackpack"));
+			Properties = new ModProperties()
+			{
+				Autoload = true,
+				AutoloadGores = true,
+				AutoloadSounds = true
+			};
 		}
 		
 		public override void ChatInput(String text)

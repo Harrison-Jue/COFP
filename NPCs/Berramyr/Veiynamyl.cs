@@ -22,8 +22,8 @@ namespace COFP.NPCs.Berramyr
 			npc.damage = 0;
 			npc.defense = 50;
 			npc.lifeMax = 10000;
-			npc.soundHit = 4;
-			npc.soundKilled = 14;
+			npc.HitSound = SoundID.NPCHit4;
+			npc.DeathSound = SoundID.NPCDeath14;
 			npc.lavaImmune = true;
 			npc.noGravity = true;
 			npc.noTileCollide = true;

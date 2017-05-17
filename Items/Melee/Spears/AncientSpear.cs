@@ -22,7 +22,7 @@ namespace COFP.Items.Melee.Spears
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.knockBack = 4f;
-			item.useSound = 1;
+			item.UseSound = SoundID.Item1;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.useTurn = true;
@@ -46,7 +46,7 @@ namespace COFP.Items.Melee.Spears
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.Spear, 1);
 				recipe.AddIngredient(ItemID.Bone, 30);
-				recipe.AddCraftGroup(mod.GetCraftGroup("T2Bar"), 20);
+				recipe.AddRecipeGroup("T2Bar", 20);
 				recipe.AddTile(TileID.Anvils);
 				recipe.SetResult(this);
 				recipe.AddRecipe();

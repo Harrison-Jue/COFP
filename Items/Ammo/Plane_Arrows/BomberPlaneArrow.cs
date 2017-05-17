@@ -31,7 +31,7 @@ namespace COFP.Items.Ammo.Plane_Arrows
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("PaperAirplaneArrow"), 25);
-			recipe.AddCraftGroup(mod.GetCraftGroup("T2Bar"), 5);
+			recipe.AddRecipeGroup("T2Bar", 5);
 			recipe.AddIngredient(ItemID.PixieDust, 5);
 			recipe.AddIngredient(ItemID.Bomb, 5);
 			recipe.AddTile(TileID.MythrilAnvil);

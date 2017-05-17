@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 
 namespace COFP.NPCs.Berramyr
@@ -38,8 +39,8 @@ namespace COFP.NPCs.Berramyr
 			npc.damage = 0;
 			npc.defense = defaultDefense;
 			npc.lifeMax = 35000;
-			npc.soundHit = 4;
-			npc.soundKilled = 14;
+			npc.HitSound = SoundID.NPCHit4;
+			npc.DeathSound = SoundID.NPCDeath14;
 			npc.boss = true;
 			npc.lavaImmune = true;
 			npc.noGravity = true;
@@ -217,7 +218,7 @@ namespace COFP.NPCs.Berramyr
 					float playersDistance = (float)System.Math.Sqrt((double)dX * dX + dY * dY);
 					if(playersDistance < 50)
 					{
-						p.Hurt(30, p.direction);
+						p.Hurt(PlayerDeathReason.ByNPC(npc.whoAmI), 30, p.direction);
 					}
 				}
 				int[] posNeg = {1, -1};

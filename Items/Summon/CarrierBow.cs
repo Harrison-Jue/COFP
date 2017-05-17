@@ -18,10 +18,10 @@ namespace COFP.Items.Summon
 			item.height = 32;
 			item.maxStack = 1;
 			item.toolTip = "Fires arrows that turn into planes.";
-			item.useTime = 45;
-			item.useAnimation = 45;
+			item.useTime = 15;
+			item.useAnimation = 15;
 			item.knockBack = 5f;
-			item.useSound = 11;
+			item.UseSound = SoundID.Item11;
 			item.noMelee = true;
 			item.useStyle = 5;
 			item.value = Item.sellPrice(1, 0, 0, 0);

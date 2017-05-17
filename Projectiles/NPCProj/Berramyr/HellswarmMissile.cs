@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 
 
@@ -87,7 +88,14 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			float distance = (float)System.Math.Sqrt((double)(dX * dX + dY * dY));
 			if(distance < 50)
 			{
-				target.Hurt(10, projectile.direction);
+				for(int i = 0; i < Main.npc.Length - 1; i++)
+				{
+					NPC berramyr = Main.npc[i];
+					if(berramyr.type == mod.NPCType("Berramyr"))
+					{
+						target.Hurt(PlayerDeathReason.ByNPC(i), 10, projectile.direction);
+					}
+				}
 			}
 		}
 		

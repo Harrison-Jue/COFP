@@ -22,7 +22,7 @@ namespace COFP.Items.Melee.Saws
 			item.useTime = 45;
 			item.useAnimation = 45;
 			item.knockBack = 4f;
-			item.useSound = 23;
+			item.UseSound = SoundID.Item23;
 			item.noMelee = true;
 			item.channel = true;
 			item.noUseGraphic = true;

@@ -21,7 +21,7 @@ namespace COFP.Items.Ranged
 			item.useTime = 60;
 			item.useAnimation = 60;
 			item.knockBack = 7f;
-			item.useSound = 12;
+			item.UseSound = SoundID.Item12;
 			item.noMelee = true;
 			item.useStyle = 5;
 			item.value = Item.sellPrice(1, 0, 0, 0);

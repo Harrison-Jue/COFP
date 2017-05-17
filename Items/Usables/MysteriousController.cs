@@ -19,7 +19,7 @@ namespace COFP.Items.Usables
 			item.toolTip = "What a mysterious thing!";
 			item.useTime = 45;
 			item.useAnimation = 45;
-			item.useSound = 11;
+			item.UseSound = SoundID.Item11;
 			item.useStyle = 1;
 			item.value = Item.buyPrice(1, 0, 0, 0);
 			item.rare = 9;
@@ -35,10 +35,6 @@ namespace COFP.Items.Usables
 			{
 				Main.NewText("Seems this thing needs to be on the surface to do anything.");
 				return false;
-			}
-			else
-			{
-				return true;
 			}
 			return !NPC.AnyNPCs(mod.NPCType("Berramyr")) && player.position.Y < Main.worldSurface * 16;
 		}

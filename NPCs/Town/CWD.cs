@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace COFP.NPCs.Town
@@ -21,8 +22,8 @@ namespace COFP.NPCs.Town
 			npc.damage = 10;
 			npc.defense = 15;
 			npc.lifeMax = 250;
-			npc.soundHit = 1;
-			npc.soundKilled = 0;
+			npc.HitSound = SoundID.NPCHit1;
+			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
 			Main.npcFrameCount[npc.type] = 16;
 			animationType = 28;

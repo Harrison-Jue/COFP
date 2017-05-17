@@ -26,9 +26,9 @@ namespace COFP.Items.Accessories
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Silk, 10);
-			recipe.AddCraftGroup(mod.GetCraftGroup("EvilBar"), 10);
-			recipe.AddCraftGroup(mod.GetCraftGroup("EvilSubstance"), 30);
-			recipe.AddCraftGroup(mod.GetCraftGroup("EvilPowder"), 30);
+			recipe.AddRecipeGroup("EvilBar", 10);
+			recipe.AddRecipeGroup("EvilSubstance", 30);
+			recipe.AddRecipeGroup("EvilPowder", 30);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

@@ -136,7 +136,7 @@ namespace COFP
 				}
 				
 				//Spawn a PDT if there is no PDT and buff is active
-				if(player.HasBuff(mod.BuffType("PDT")) != -1)
+				if(player.FindBuffIndex(mod.BuffType("PDT")) != -1)
 				{
 					pdt = true;
 					bool noPDT = true;
@@ -153,7 +153,7 @@ namespace COFP
 		}
 		
 		//Makes player spawn immediately after kill if testmode is on
-		public override void Kill(double damage, int hitDirection, bool pvp, string deathText)
+		public override void Kill (double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
 		{
 			if(MMod.testMode)
 			{

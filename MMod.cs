@@ -24,49 +24,45 @@ namespace COFP
 			};
 		}
 		
-		public override void ChatInput(String text)
+		public override void AddRecipeGroups()
 		{
-			if (text[0] != '/')
+			RecipeGroup group;
+			group = new RecipeGroup(() => Lang.misc[37] + " Tier 2 Bars", new int[] 
 			{
-				return;
-			}
-			text = text.Substring(1);
-			int index = text.IndexOf(' ');
-			string command;
-			string[] args;
-			if (index < 0)
+				ItemID.IronBar, 
+				ItemID.LeadBar
+			});
+			RecipeGroup.RegisterGroup("T2Bar", group);
+			group = new RecipeGroup(() => Lang.misc[37] + " Tier 4 Bars", new int[] 
 			{
-				command = text;
-				args = new string[0];
-			}
-			else
+				ItemID.GoldBar, 
+				ItemID.PlatinumBar
+			});
+			RecipeGroup.RegisterGroup("T4Bar", group);
+			group = new RecipeGroup(() => Lang.misc[37] + " Evil Bars", new int[] 
 			{
-				command = text.Substring(0, index);
-				args = text.Substring(index + 1).Split(' ');
-			}
-			if(command == "tiledestruction")
+				ItemID.DemoniteBar, 
+				ItemID.CrimtaneBar
+			});
+			RecipeGroup.RegisterGroup("EvilBar", group);
+			group = new RecipeGroup(() => Lang.misc[37] + " Hardmode Evil Substance", new int[] 
 			{
-				if(tileDestruction)
-				{
-					tileDestruction = false;
-					Main.NewText("Tile Destruction disabled.");
-				}
-				else
-				{
-					tileDestruction = true;
-					Main.NewText("Tile Destruction enabled.");
-				}
-			}
-		}
-		
-		public override void AddCraftGroups()
-		{
-			AddCraftGroup("T2Bar", Lang.misc[37] + " Tier 2 Bars", ItemID.IronBar, ItemID.LeadBar);
-			AddCraftGroup("T4Bar", Lang.misc[37] + " Tier 3 Bars", ItemID.GoldBar, ItemID.PlatinumBar);
-			AddCraftGroup("EvilBar", Lang.misc[37] + " Evil Bar", ItemID.DemoniteBar, ItemID.CrimtaneBar);
-			AddCraftGroup("EvilSubstanceHM", Lang.misc[37] + " Hardmode Evil Substance", ItemID.Ichor, ItemID.CursedFlame);
-			AddCraftGroup("EvilSubstance", Lang.misc[37] + " Evil Substance", ItemID.RottenChunk, ItemID.Vertebrae);
-			AddCraftGroup("EvilPowder", Lang.misc[37] + " Evil Powder", ItemID.VilePowder, ItemID.ViciousPowder);
+				ItemID.Ichor, 
+				ItemID.CursedFlame
+			});
+			RecipeGroup.RegisterGroup("EvilSubstanceHM", group);
+			group = new RecipeGroup(() => Lang.misc[37] + " Evil Substance", new int[] 
+			{
+				ItemID.RottenChunk, 
+				ItemID.Vertebrae
+			});
+			RecipeGroup.RegisterGroup("EvilSubstance", group);
+			group = new RecipeGroup(() => Lang.misc[37] + " Evil Powder", new int[] 
+			{
+				ItemID.VilePowder, 
+				ItemID.ViciousPowder
+			});
+			RecipeGroup.RegisterGroup("EvilPowder", group);
 		}
 		
 		//Simple way to add explosions to anyone since Entity is the base class for all things, you can use any extended classes on it

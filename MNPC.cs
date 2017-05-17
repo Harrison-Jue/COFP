@@ -103,7 +103,7 @@ namespace COFP
 				
 				for(int j = 0; j < 5; j++)
 				{
-					if (mb.Intersects(nb) && p.HasBuff(BuffID.OnFire) == -1 && npc.type == berraIDs[j])
+					if (mb.Intersects(nb) && p.FindBuffIndex(BuffID.OnFire) == -1 && npc.type == berraIDs[j])
 					{
 						p.AddBuff(BuffID.OnFire, 180, false);
 					}
@@ -115,47 +115,47 @@ namespace COFP
 		public override void NPCLoot(NPC npc)
 		{
 			//Drops ore depending on buff
-			if(npc.HasBuff(mod.BuffType("CTSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("CTSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.CopperOre, ItemID.TinOre);
 			}
-			if(npc.HasBuff(mod.BuffType("ILSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("ILSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.IronOre, ItemID.LeadOre);
 			}
-			if(npc.HasBuff(mod.BuffType("STSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("STSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.SilverOre, ItemID.TungstenOre);
 			}
-			if(npc.HasBuff(mod.BuffType("GPSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("GPSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.GoldOre, ItemID.PlatinumOre);
 			}
-			if(npc.HasBuff(mod.BuffType("MSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("MSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.Meteorite, -1);
 			}
-			if(npc.HasBuff(mod.BuffType("DCSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("DCSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.DemoniteOre, ItemID.CrimtaneOre);
 			}
-			if(npc.HasBuff(mod.BuffType("OHSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("OHSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.Obsidian, ItemID.Hellstone);
 			}
-			if(npc.HasBuff(mod.BuffType("CPSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("CPSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.CobaltOre, ItemID.PalladiumOre);
 			}
-			if(npc.HasBuff(mod.BuffType("MOSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("MOSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.MythrilOre, ItemID.OrichalcumOre);
 			}
-			if(npc.HasBuff(mod.BuffType("ATSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("ATSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.AdamantiteOre, ItemID.TitaniumOre);
 			}
-			if(npc.HasBuff(mod.BuffType("CSprayed")) != -1)
+			if(npc.FindBuffIndex(mod.BuffType("CSprayed")) != -1)
 			{
 				oreDropHelper(npc, ItemID.ChlorophyteOre, -1);
 			}

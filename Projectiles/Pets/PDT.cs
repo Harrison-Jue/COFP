@@ -66,7 +66,7 @@ namespace COFP.Projectiles.Pets
 				}
 			}
 			
-			if(!player.active || player.dead || player.HasBuff(mod.BuffType("PDT")) == -1)
+			if(!player.active || player.dead || player.FindBuffIndex(mod.BuffType("PDT")) == -1)
 			{
 				projectile.Kill();
 			}

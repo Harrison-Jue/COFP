@@ -116,7 +116,7 @@ namespace COFP.Projectiles.Barrier
 			//Check if the player has the buff for the projectile, if not kill it
 			if (Main.myPlayer == owner.whoAmI) 
 			{
-				int id = owner.HasBuff(mod.BuffType("ShadowBloodVeil"));
+				int id = owner.FindBuffIndex(mod.BuffType("ShadowBloodVeil"));
 				
 				//-1 is false and I beleive 1 is true
 				if(id == -1)
@@ -131,7 +131,7 @@ namespace COFP.Projectiles.Barrier
 			Player owner = Main.player[projectile.owner];
 			if (Main.myPlayer == owner.whoAmI) 
 			{
-				int id = owner.HasBuff(mod.BuffType("ShadowBloodVeil"));
+				int id = owner.FindBuffIndex(mod.BuffType("ShadowBloodVeil"));
 				if(id == -1)
 				{ 
 					//Does nothing

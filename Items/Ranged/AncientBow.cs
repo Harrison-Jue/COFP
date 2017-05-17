@@ -21,7 +21,7 @@ namespace COFP.Items.Ranged
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.knockBack = 7f;
-			item.useSound = 11;
+			item.UseSound = SoundID.Item11;
 			item.noMelee = true;
 			item.useStyle = 5;
 			item.value = Item.buyPrice(0, 5, 0, 0);
@@ -43,7 +43,7 @@ namespace COFP.Items.Ranged
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(ItemID.WoodenBow, 1);
 				recipe.AddIngredient(ItemID.Bone, 30);
-				recipe.AddCraftGroup(mod.GetCraftGroup("T2Bar"), 20);
+				recipe.AddRecipeGroup("T2Bar", 20);
 				recipe.AddTile(TileID.Anvils);
 				recipe.SetResult(this);
 				recipe.AddRecipe();

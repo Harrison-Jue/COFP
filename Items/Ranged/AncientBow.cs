@@ -11,13 +11,11 @@ namespace COFP.Items.Ranged
     {
 		public override void SetDefaults()
 		{
-			item.name = "Ancient Bow";
 			item.damage = 20;
 			item.ranged = true;
 			item.width = 60;
 			item.height = 60;
 			item.maxStack = 1;
-			item.toolTip = "Fires an arrow that rains arrows after it is destroyed.";
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.knockBack = 7f;
@@ -29,6 +27,13 @@ namespace COFP.Items.Ranged
 			item.shoot = mod.ProjectileType("AncientArrow");
 			item.shootSpeed = 8f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ancient Bow");
+			Tooltip.SetDefault("Fires an arrow that rains arrows after it is destroyed.");
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)

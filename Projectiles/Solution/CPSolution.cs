@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Solution
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "CPSolution";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.timeLeft = 90;
@@ -22,6 +21,12 @@ namespace COFP.Projectiles.Solution
 			projectile.ignoreWater = true;
 			projectile.extraUpdates = 2;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("CP Solution");
+		}
+		
 		public override void AI()
 		{
 			projectile.ai[1] = (float) mod.BuffType("CPSprayed");

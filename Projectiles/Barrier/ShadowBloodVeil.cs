@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Barrier
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Shadow Blood Veil";
 			projectile.width = 250;
 			projectile.height = 250;
 			projectile.timeLeft = 999999;
@@ -21,6 +20,12 @@ namespace COFP.Projectiles.Barrier
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shadow Blood Veil");
+		}
+		
 		public override void AI()
 		{
 			projectile.light = 0.9f;
@@ -125,6 +130,7 @@ namespace COFP.Projectiles.Barrier
 				} 
 			}
 		}
+		
 		public override void Kill(int timeLeft)
 		{
 			//Player variable

@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.AncientSpear
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Rust";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.aiStyle = 1;
@@ -21,6 +20,12 @@ namespace COFP.Projectiles.Melee.AncientSpear
 			projectile.ignoreWater = true;
 			projectile.melee = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ancient Spear");
+		}
+		
 		public override void AI()
         {
 			int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width, projectile.height, 24, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 0.25f);

@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Pets
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Point Defense Turret";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.scale = 1f;
@@ -24,6 +23,12 @@ namespace COFP.Projectiles.Pets
 			projectile.penetrate = -1;
 			projectile.extraUpdates = 5;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Point Defense Turret");
+		}
+		
 		public override void AI()
 		{
 			projectile.ai[0] += 1f;

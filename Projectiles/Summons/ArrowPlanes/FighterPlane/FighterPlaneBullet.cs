@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Fighter Plane";
 			projectile.width = 4;
 			projectile.height = 4;
 			projectile.scale = 0.75f;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 			projectile.ignoreWater = false;
 			projectile.minion = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Fighter Plane");
+		}
+		
 		public override void AI()
 		{
 			projectile.light = 0.6f;

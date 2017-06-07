@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Barrier
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Life Blood";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.alpha = 255;
@@ -22,6 +21,12 @@ namespace COFP.Projectiles.Barrier
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Life Blood");
+		}
+		
 		public override void AI()
 		{
 			//Basically the code for a spirit heal
@@ -43,7 +48,7 @@ namespace COFP.Projectiles.Barrier
 					{
 						Main.player[num604].statLife = Main.player[num604].statLifeMax2;
 					}
-					NetMessage.SendData(66, -1, -1, "", num491, (float)num496, 0f, 0f, 0, 0, 0);
+					NetMessage.SendData(66, -1, -1, null, num491, (float)num496, 0f, 0f, 0, 0, 0);
 				}
 				projectile.Kill();
 			}

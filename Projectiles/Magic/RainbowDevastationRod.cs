@@ -14,7 +14,6 @@ namespace COFP.Projectiles.Magic
 		
 		public override void SetDefaults()
 		{
-			projectile.name = "Rainbow Devastation Rod";
 			projectile.width = 74;
 			projectile.height = 78;
 			projectile.scale = 1f;
@@ -28,6 +27,12 @@ namespace COFP.Projectiles.Magic
 			projectile.penetrate = -1;
 			Main.projFrames[projectile.type] = 7;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Rainbow Devastation Rod");
+		}
+		
 		public override void AI()
         {
 			//Settings for updating on net

@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Ranged.AncientBow
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ancient Arrow";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.aiStyle = 31;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.Ranged.AncientBow
 			projectile.ranged = true;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ancient Arrow");
+		}
+		
 		public override void AI()
 		{
 			if ((int)projectile.timeLeft % 5 == 0 && projectile.owner == Main.myPlayer && Main.netMode != 1)

@@ -11,14 +11,12 @@ namespace COFP.Items.Melee.Spears
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Ancient Spear";
 			item.damage = 30;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
 			item.scale = 1.1f;
 			item.maxStack = 1;
-			item.toolTip = "Spear launches a mini spear that produces rust that does a quarter of the damage.";
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.knockBack = 4f;
@@ -32,6 +30,13 @@ namespace COFP.Items.Melee.Spears
 			item.shoot = mod.ProjectileType("AncientSpear");
 			item.shootSpeed = 5f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ancient Spear");
+			Tooltip.SetDefault("Spear launches a mini spear that produces rust that does a quarter of the damage.");
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)

@@ -1,3 +1,3 @@
 This mod is the experimentation and implementation of projectile concepts. Test these out either by waiting for the merchant and buying it if you feel like getting them in the legit way, or just craft them with a single block of dirt. Please post a comment on the thread page on these experimental items!
-Changelog for v4:
+Changelog for v5:
 - Now can be played on the latest version of tModLoader!

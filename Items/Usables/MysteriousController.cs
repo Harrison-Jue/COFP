@@ -11,12 +11,10 @@ namespace COFP.Items.Usables
     {
 		public override void SetDefaults()
 		{
-			item.name = "Mysterious Controller";
 			item.width = 34;
 			item.height = 42;
 			item.scale = 0.75f;
 			item.maxStack = 1;
-			item.toolTip = "What a mysterious thing!";
 			item.useTime = 45;
 			item.useAnimation = 45;
 			item.UseSound = SoundID.Item11;
@@ -24,6 +22,13 @@ namespace COFP.Items.Usables
 			item.value = Item.buyPrice(1, 0, 0, 0);
 			item.rare = 9;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Mysterious Controller");
+			Tooltip.SetDefault("What a mysterious thing!");
+		}
+		
 		public override bool CanUseItem(Player player)
 		{
 			if(NPC.AnyNPCs(mod.NPCType("Berramyr")))
@@ -38,6 +43,7 @@ namespace COFP.Items.Usables
 			}
 			return !NPC.AnyNPCs(mod.NPCType("Berramyr")) && player.position.Y < Main.worldSurface * 16;
 		}
+		
 		public override bool UseItem(Player player)
 		{
 			int[] direction = {-1, 1};
@@ -48,6 +54,7 @@ namespace COFP.Items.Usables
 			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
 			return true;
 		}
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

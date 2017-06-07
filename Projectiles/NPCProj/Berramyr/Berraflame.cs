@@ -12,7 +12,6 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Berraflame";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.timeLeft = 30;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			projectile.ignoreWater = true;
 			projectile.extraUpdates = 2;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Berraflame");
+		}
+		
 		public override void AI()
 		{
 			if(projectile.ai[0] > 4f)

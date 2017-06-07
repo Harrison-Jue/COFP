@@ -11,14 +11,12 @@ namespace COFP.Items.Melee.Spears
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Gae Bolg";
 			item.damage = 125;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
 			item.scale = 1.1f;
 			item.maxStack = 1;
-			item.toolTip = "A legendary spear launches a mini spear that produces infernos in its wake that produces barbs.";
 			item.useTime = 45;
 			item.useAnimation = 45;
 			item.knockBack = 4f;
@@ -32,6 +30,13 @@ namespace COFP.Items.Melee.Spears
 			item.shoot = mod.ProjectileType("GaeBolg");
 			item.shootSpeed = 5f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gae Bolg");
+			Tooltip.SetDefault("A legendary spear launches a mini spear that produces infernos in its wake that produces barbs.");
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)

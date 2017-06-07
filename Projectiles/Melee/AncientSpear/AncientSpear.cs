@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.AncientSpear
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ancient Spear";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.scale = 1.1f;
@@ -26,6 +25,12 @@ namespace COFP.Projectiles.Melee.AncientSpear
 			projectile.ownerHitCheck = true;
 			projectile.hide = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ancient Spear");
+		}
+		
 		public override void AI()
         {
 			projectile.light = 0.9f;

@@ -12,14 +12,12 @@ namespace COFP.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Rainbow Devastation";
 			item.damage = 180;
 			item.magic = true;
 			item.width = 38;
 			item.height = 38;
 			item.scale = 1.1f;
 			item.maxStack = 1;
-			item.toolTip = "A powerful and colorfull staff, capable of destroying everything.";
 			item.useTime = 45;
 			item.useAnimation = 45;
 			item.knockBack = 4f;
@@ -34,6 +32,15 @@ namespace COFP.Items.Magic
 			item.shoot = mod.ProjectileType("RainbowDevastationRod");
 			item.shootSpeed = 5f;
 		}
+		
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Rainbow Devastation");
+			Tooltip.SetDefault("A powerful and colorfull staff, capable of destroying everything.");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(10, 7));
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)
@@ -55,14 +62,10 @@ namespace COFP.Items.Magic
 				recipe.AddRecipe();
 			}
 		}
-		public override DrawAnimation GetAnimation()
-		{
-			//Animate item
-			return new DrawAnimationVertical(10, 7);
-		}
+		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			//Making sure the plaer channels
+			//Making sure the player channels
 			player.channel = true;
 			
 			//Spawn the rod projectile, set the first counter to 30 updates or 1/2 a second

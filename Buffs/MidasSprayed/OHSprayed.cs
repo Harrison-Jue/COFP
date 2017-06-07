@@ -13,13 +13,15 @@ namespace COFP.Buffs.MidasSprayed
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "OHSprayed";
-			Main.buffTip[this.Type] = "Solidifying to Obsidian or Hellstone";
+			DisplayName.SetDefault("OHSprayed");
+			Description.SetDefault("Solidifying to Obsidian or Hellstone");
 		}
+		
 		public override void Update(NPC npc, ref int buffIndex)
 		{
 			MBuff.MidasDeBuff(npc, npc.buffTime[buffIndex], 7, 224, 12);
 		}
+		
 		public override bool ReApply(NPC npc, int time, int buffIndex)
 		{
 			npc.buffTime[buffIndex] += 5;

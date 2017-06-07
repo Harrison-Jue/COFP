@@ -11,13 +11,11 @@ namespace COFP.Items.Ranged
     {
 		public override void SetDefaults()
 		{
-			item.name = "Ichiival";
 			item.damage = 100;
 			item.ranged = true;
 			item.width = 60;
 			item.height = 60;
 			item.maxStack = 1;
-			item.toolTip = "Fires 5 bolts that rains beams of lights and produces fireballs on impacts after it is destroyed.";
 			item.useTime = 60;
 			item.useAnimation = 60;
 			item.knockBack = 7f;
@@ -29,6 +27,13 @@ namespace COFP.Items.Ranged
 			item.shoot = mod.ProjectileType("BoltOfIchiival");
 			item.shootSpeed = 8f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ichiival");
+			Tooltip.SetDefault("Fires 5 bolts that rains beams of lights and produces fireballs on impacts after it is destroyed.");
+		}
+		
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 			float num70 = (float)Main.mouseX + Main.screenPosition.X - position.X;
@@ -46,6 +51,7 @@ namespace COFP.Items.Ranged
 			}
             return false;
         }
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)

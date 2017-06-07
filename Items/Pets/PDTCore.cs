@@ -11,11 +11,15 @@ namespace COFP.Items.Pets
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.ZephyrFish);
-			item.name = "PDT Core";
-			item.toolTip = "Summons a Point Defense Turret that defends you from enemy projectiles.";
 			item.shoot = mod.ProjectileType("PDT");
 			item.buffType = mod.BuffType("PDT");
 			item.value = Item.sellPrice(0, 1, 0, 0);
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("PDT Core");
+			Tooltip.SetDefault("Summons a Point Defense Turret that defends you from enemy projectiles.");
 		}
 
 		public override void AddRecipes()

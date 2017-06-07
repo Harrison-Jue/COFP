@@ -12,7 +12,6 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Berrashot";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.timeLeft = 90;
@@ -20,6 +19,11 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			projectile.hostile = true;
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Berrashot");
 		}
 		
 		public override void AI()

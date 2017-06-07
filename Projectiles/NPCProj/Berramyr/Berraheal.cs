@@ -11,7 +11,6 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Berraheal";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.alpha = 255;
@@ -22,6 +21,12 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Berraheal");
+		}
+		
 		public override void AI()
 		{
 			//Basically the code for a spirit heal
@@ -38,7 +43,7 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 				if (projectile.owner == Main.myPlayer)
 				{
 					MNPC.healNPC(Main.npc[496], (int) healPower);
-					NetMessage.SendData(66, -1, -1, "", netTarget, (float)healPower, 0f, 0f, 0, 0, 0);
+					NetMessage.SendData(66, -1, -1, null, netTarget, (float)healPower, 0f, 0f, 0, 0, 0);
 				}
 				projectile.Kill();
 			}
@@ -59,7 +64,7 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 				if (mb.Intersects(nb) && p.active && projectile.owner == Main.myPlayer)
 				{
 					MPlayer.healPlayer(p, (int) healPower);
-					NetMessage.SendData(66, -1, -1, "", p.whoAmI, (float)healPower, 0f, 0f, 0, 0, 0);
+					NetMessage.SendData(66, -1, -1, null, p.whoAmI, (float)healPower, 0f, 0f, 0, 0, 0);
 					projectile.Kill();
 				}
 			}

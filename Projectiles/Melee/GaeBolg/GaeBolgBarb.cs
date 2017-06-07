@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.GaeBolg
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Gae Bolg";
 			projectile.width = 10;
 			projectile.height = 8;
 			projectile.aiStyle = 1;
@@ -21,6 +20,12 @@ namespace COFP.Projectiles.Melee.GaeBolg
 			projectile.ignoreWater = true;
 			projectile.melee = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gae Bolg");
+		}
+		
 		public override void OnHitNPC(NPC n, int damage, float knockback, bool crit)
 		{
 			projectile.position.X = n.Center.X;

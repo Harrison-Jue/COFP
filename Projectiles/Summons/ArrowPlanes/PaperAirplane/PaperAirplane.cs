@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.PaperAirplane
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Paper Airplane";
 			projectile.width = 14;
 			projectile.height = 32;
 			projectile.scale = 0.5f;
@@ -23,5 +22,11 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.PaperAirplane
 			projectile.ignoreWater = true;
 			projectile.minion = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Paper Airplane");
+		}
+		
 	}
 }

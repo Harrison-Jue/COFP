@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.GaeBolg
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Gae Bolg";
 			projectile.width = 40;
 			projectile.height = 40;
 			projectile.scale = 1.25f;
@@ -25,6 +24,12 @@ namespace COFP.Projectiles.Melee.GaeBolg
 			projectile.ownerHitCheck = true;
 			projectile.hide = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gae Bolg");
+		}
+		
 		public override void AI()
         {
 			projectile.light = 0.9f;

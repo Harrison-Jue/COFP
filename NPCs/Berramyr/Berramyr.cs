@@ -30,7 +30,6 @@ namespace COFP.NPCs.Berramyr
 		
 		public override void SetDefaults()
 		{
-			npc.name = "Berramyr";
 			npc.friendly = false;
 			npc.scale = 1.5f;
 			npc.width = 106;
@@ -49,6 +48,12 @@ namespace COFP.NPCs.Berramyr
 			npc.value = Item.buyPrice(0, 10, 0, 0);
 			music = MusicID.Boss1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Berramyr");
+		}
+		
 		public override void AI()
 		{
 			int maxDefense = 0;

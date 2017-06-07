@@ -11,13 +11,11 @@ namespace COFP.Items.Ammo.Plane_Arrows
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bomber Plane Arrow";
 			item.damage = 90;
 			item.summon = true;
 			item.width = 14;
 			item.height = 32;
 			item.maxStack = 999;
-			item.toolTip = "Arrows that turn into Bombers.";
 			item.consumable = true;
 			item.knockBack = 1f;
 			item.value = Item.sellPrice(0, 0, 2, 0);
@@ -25,6 +23,12 @@ namespace COFP.Items.Ammo.Plane_Arrows
 			item.shoot = mod.ProjectileType("BomberPlaneArrow");
 			item.shootSpeed = 7f;
 			item.ammo = mod.ItemType("PaperAirplaneArrow");
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bomber Plane Arrow");
+			Tooltip.SetDefault("Arrows that turn into Bombers.");
 		}
 
 		public override void AddRecipes()

@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Flying
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Fleeing Fairy";
 			projectile.width = 42;
 			projectile.height = 30;
 			Main.projFrames[projectile.type] = 4;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.Flying
 			projectile.magic = true;
 			projectile.aiStyle = 7; //Make it a grappling hook so you can equip it
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Fleeing Fairy");
+		}
+		
 		public override bool PreAI()
 		{
 			return false; //Make sure to not use Vanilla AI of aiStyle 7

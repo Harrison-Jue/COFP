@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.PaperAirplane
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Paper Airplane";
 			projectile.width = 14;
 			projectile.height = 32;
 			projectile.aiStyle = 1;
@@ -22,6 +21,12 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.PaperAirplane
 			projectile.ignoreWater = true;
 			projectile.minion = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Paper Airplane Arrow");
+		}
+		
 		public override void Kill(int timeLeft)
         {
             Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 32, projectile.velocity.X, projectile.velocity.Y, mod.ProjectileType("PaperAirplane"), projectile.damage, projectile.knockBack, Main.myPlayer);

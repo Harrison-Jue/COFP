@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.BomberPlane
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Bomber Plane";
 			projectile.width = 48;
 			projectile.height = 48;
 			projectile.scale = 0.5f;
@@ -24,6 +23,12 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.BomberPlane
 			projectile.minion = true;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bomber Plane");
+		}
+		
 		public override void AI()
         {
 			projectile.light = 0.9f;

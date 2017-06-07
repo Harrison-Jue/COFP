@@ -13,7 +13,6 @@ namespace COFP.NPCs.Town
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Custom Weapons Developer";
 			npc.townNPC = true;
 			npc.friendly = true;
 			npc.width = 18;
@@ -25,21 +24,30 @@ namespace COFP.NPCs.Town
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
-			Main.npcFrameCount[npc.type] = 16;
 			animationType = 28;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Custom Weapons Developer");
+			Main.npcFrameCount[npc.type] = 16;
+		}
+		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money) 
 		{
 			return true;
 		}
+		
 		public override string TownNPCName()
 		{
 			return "Ed";
 		}
+		
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
 			button = "Shop";
 		}
+		
 		public override void OnChatButtonClicked(bool firstButton, ref bool openShop)
 		{
 			if (firstButton)
@@ -47,6 +55,7 @@ namespace COFP.NPCs.Town
 				openShop = true;
 			}
 		}
+		
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
 			shop.item[nextSlot].SetDefaults(mod.ItemType("ControllableSaw"));
@@ -68,6 +77,7 @@ namespace COFP.NPCs.Town
 				nextSlot++;
 			}
 		}
+		
 		public override string GetChat()
 		{
 			string chat = "I sell basic COFP supplies.";

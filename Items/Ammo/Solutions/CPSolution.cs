@@ -12,12 +12,10 @@ namespace COFP.Items.Ammo.Solutions
 	{
 		public override void SetDefaults()
 		{
-			item.name = "CP Solution";
 			item.magic = true;
 			item.width = 20;
 			item.height = 28;
 			item.maxStack = 999;
-			item.toolTip = "The solution to make everything into cobalt or palladium!";
 			item.consumable = true;
 			item.knockBack = 1f;
 			item.value = Item.sellPrice(0, 0, 2, 0);
@@ -27,10 +25,11 @@ namespace COFP.Items.Ammo.Solutions
 			item.ammo = mod.ItemType("CTSolution");
 		}
 		
-		public override DrawAnimation GetAnimation()
+		public override void SetStaticDefaults()
 		{
-			//Animate item
-			return new DrawAnimationVertical(7, 8);
+			DisplayName.SetDefault("CP Solution");
+			Tooltip.SetDefault("The solution to make everything into cobalt or palladium!");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(7, 8));
 		}
 		
 		public override void AddRecipes()

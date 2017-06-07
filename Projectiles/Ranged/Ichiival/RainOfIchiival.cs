@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Ranged.Ichiival
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ichiival";
 			projectile.width = 4;
 			projectile.height = 4;
 			projectile.aiStyle = 0;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.Ranged.Ichiival
 			projectile.ranged = true;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ichiival");
+		}
+		
 		public override void AI()
 		{
 			projectile.light = 0.9f;

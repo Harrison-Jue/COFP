@@ -14,7 +14,6 @@ namespace COFP.Projectiles.Magic
 		
 		public override void SetDefaults()
 		{
-			projectile.name = "Rainbow Ball";
 			projectile.width = 28;
 			projectile.height = 28;
 			projectile.scale = 0.5f;
@@ -28,6 +27,12 @@ namespace COFP.Projectiles.Magic
 			projectile.penetrate = 1;
 			projectile.extraUpdates = 4;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Rainbow Devastation");
+		}
+		
 		public override void AI()
         {
 			//The counter, updating

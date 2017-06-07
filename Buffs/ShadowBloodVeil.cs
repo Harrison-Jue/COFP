@@ -13,9 +13,10 @@ namespace COFP.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "Shadow Blood Veil";
-			Main.buffTip[this.Type] = "A veil of draining blood surrounds you.";
+			DisplayName.SetDefault("Shadow Blood Veil");
+			Description.SetDefault("A veil of draining blood surrounds you.");
 		}
+		
 		public override void Update(Player player, ref int buffIndex)
 		{
 			//Check for existance of ShadowBloodVeil projectile if there isn't one, spawn it.

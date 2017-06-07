@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Fighter Plane";
 			projectile.width = 66;
 			projectile.height = 24;
 			projectile.scale = 0.5f;
@@ -25,6 +24,12 @@ namespace COFP.Projectiles.Summons.ArrowPlanes.FighterPlane
 			projectile.penetrate = -1;
 			Main.projFrames[projectile.type] = 3;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Fighter Plane");
+		}
+		
 		public override void AI()
 		{
 			//Homing onto an npc

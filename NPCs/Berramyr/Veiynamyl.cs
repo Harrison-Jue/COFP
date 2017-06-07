@@ -13,7 +13,6 @@ namespace COFP.NPCs.Berramyr
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Veiynamyl";
 			npc.friendly = false;
 			npc.width = 62;
 			npc.height = 60;
@@ -29,6 +28,12 @@ namespace COFP.NPCs.Berramyr
 			npc.noTileCollide = true;
 			npc.knockBackResist = 0f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Veiynamyl");
+		}
+		
 		public override void AI()
 		{
 			bool exists = false;

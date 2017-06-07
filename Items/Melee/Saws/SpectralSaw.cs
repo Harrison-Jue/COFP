@@ -11,14 +11,12 @@ namespace COFP.Items.Melee.Saws
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Spectral Saw";
 			item.damage = 75;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
 			item.scale = 1.1f;
 			item.maxStack = 1;
-			item.toolTip = "A controllable saw that heals you, burns, slows, and lowers defense; It never breaks.";
 			item.useTime = 45;
 			item.useAnimation = 45;
 			item.knockBack = 4f;
@@ -33,6 +31,13 @@ namespace COFP.Items.Melee.Saws
 			item.shoot = mod.ProjectileType("SpectralSaw");
 			item.shootSpeed = 5f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spectral Saw");
+			Tooltip.SetDefault("A controllable saw that heals you, burns, slows, and lowers defense; It never breaks.");
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)
@@ -56,6 +61,7 @@ namespace COFP.Items.Melee.Saws
 				recipe.AddRecipe();
 			}
 		}
+		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			player.channel = true;

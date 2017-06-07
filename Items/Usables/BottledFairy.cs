@@ -11,13 +11,11 @@ namespace COFP.Items.Usables
     {
 		public override void SetDefaults()
 		{
-			item.name = "Bottled Fairy";
 			item.summon = true;
 			item.width = 40;
 			item.height = 24;
 			item.scale = 0.75f;
 			item.maxStack = 1;
-			item.toolTip = "Let the Fairy out and it will carry you in real fast speeds!";
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.knockBack = 5f;
@@ -31,6 +29,13 @@ namespace COFP.Items.Usables
 			item.noUseGraphic = true;
 			item.useTurn = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bottled Fairy");
+			Tooltip.SetDefault("Let the Fairy out and it will carry you in real fast speeds!");
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)
@@ -51,6 +56,7 @@ namespace COFP.Items.Usables
 				recipe.AddRecipe();
 			}
 		}
+		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 			//Just set the player to have no falling damage on use

@@ -13,8 +13,8 @@ namespace COFP.Buffs.MidasSprayed
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "GPSprayed";
-			Main.buffTip[this.Type] = "Solidifying to Gold or Palladium";
+			DisplayName.SetDefault("GPSprayed");
+			Description.SetDefault("Solidifying to Gold or Platinum");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{

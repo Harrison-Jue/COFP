@@ -1,5 +1,5 @@
 author = Sin Costan
-version = 4.0.1
+version = 5.0.1
 displayName = Sin Costan's Collection of Fun Projectiles: Once Again
 homepage = https://forums.terraria.org/index.php?threads/sin-costans-collection-of-fun-projectiles-once-again.39887/
 hideCode = false

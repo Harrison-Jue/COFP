@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.GaeBolg
 	{	
 		public override void SetDefaults()
 		{
-			projectile.name = "Gae Bolg";
 			projectile.width = 64;
 			projectile.height = 64;
 			projectile.aiStyle = 50;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.Melee.GaeBolg
 			projectile.melee = true;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gae Bolg");
+		}
+		
 		public override void AI()
 		{
 			//Spawns barbs every 6 ticks

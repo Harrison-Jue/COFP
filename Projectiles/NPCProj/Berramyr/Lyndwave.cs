@@ -15,7 +15,6 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 		
 		public override void SetDefaults()
 		{
-			projectile.name = "Lyndwave";
 			projectile.width = 60;
 			projectile.height = 32;
 			projectile.scale = 1f;
@@ -26,6 +25,12 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lyndwave");
+		}
+		
 		public override void AI()
 		{
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;

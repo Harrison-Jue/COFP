@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.Saws
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Saw";
 			projectile.width = 32;
 			projectile.height = 32;
 			projectile.scale = 1.1f;
@@ -23,6 +22,12 @@ namespace COFP.Projectiles.Melee.Saws
 			projectile.melee = true;
 			projectile.penetrate = 10;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Saw");
+		}
+		
 		public override void AI()
         {
 			projectile.rotation += (float)projectile.direction * 0.8f;

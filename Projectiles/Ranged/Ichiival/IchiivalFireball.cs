@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Ranged.Ichiival
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ichiival";
 			projectile.width = 12;
 			projectile.height = 16;
 			projectile.scale = 0.5f;
@@ -24,6 +23,12 @@ namespace COFP.Projectiles.Ranged.Ichiival
 			projectile.ranged = true;
 			projectile.extraUpdates = 1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ichiival");
+		}
+		
 		public override void AI()
 		{
 			projectile.light = 0.9f;
@@ -34,6 +39,7 @@ namespace COFP.Projectiles.Ranged.Ichiival
 			Main.dust[DustID2].noGravity = true;
 			Main.dust[DustID3].noGravity = true;
 		}
+		
 		public override bool OnTileCollide(Vector2 velocityChange) 
 		{
 			if (projectile.velocity.X != velocityChange.X) 

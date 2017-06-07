@@ -11,13 +11,11 @@ namespace COFP.Items.Usables
     {
 		public override void SetDefaults()
 		{
-			item.name = "Midas Sprayer";
 			item.summon = true;
 			item.width = 40;
 			item.height = 24;
 			item.scale = 0.75f;
 			item.maxStack = 1;
-			item.toolTip = "A clentimator for quality of life!";
 			item.useTime = 4;
 			item.useAnimation = 12;
 			item.knockBack = 5f;
@@ -31,10 +29,18 @@ namespace COFP.Items.Usables
 			item.autoReuse = true;
 			item.useAmmo = mod.ItemType("CTSolution");
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Midas Sprayer");
+			Tooltip.SetDefault("A clentimator for quality of life!");
+		}
+		
 		public override bool AltFunctionUse(Player player)
 		{
 			return true;
 		}
+		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			float altFunction = 0f;
@@ -45,6 +51,7 @@ namespace COFP.Items.Usables
 			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI, altFunction, 0f);
 			return false;
 		}
+		
 		public override bool ConsumeAmmo(Player p) //Tells the game whether the item consumes ammo or not
         {
 			//If the animation reaches less than the initial useAnimation - 8 ticks
@@ -57,6 +64,7 @@ namespace COFP.Items.Usables
                 return false; //Ammo is not consumed before animation is finished
             }
         }
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)

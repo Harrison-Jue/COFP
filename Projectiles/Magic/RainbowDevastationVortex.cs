@@ -14,7 +14,6 @@ namespace COFP.Projectiles.Magic
 		
 		public override void SetDefaults()
 		{
-			projectile.name = "Rainbow Devastation Vortex";
 			projectile.width = 52;
 			projectile.height = 52;
 			projectile.scale = 1f;
@@ -27,6 +26,12 @@ namespace COFP.Projectiles.Magic
 			projectile.magic = true;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Rainbow Devastation");
+		}
+		
 		public override void AI()
         {
 			//Player variable

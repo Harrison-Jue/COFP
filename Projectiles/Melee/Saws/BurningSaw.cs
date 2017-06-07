@@ -12,7 +12,6 @@ namespace COFP.Projectiles.Melee.Saws
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Burning Saw";
 			projectile.width = 32;
 			projectile.height = 32;
 			projectile.scale = 1.1f;
@@ -24,6 +23,12 @@ namespace COFP.Projectiles.Melee.Saws
 			projectile.melee = true;
 			projectile.penetrate = 20;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Burning Saw");
+		}
+		
 		public override void AI()
         {
 			projectile.light = 0.4f;

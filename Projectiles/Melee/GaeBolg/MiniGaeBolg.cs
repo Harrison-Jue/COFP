@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Melee.GaeBolg
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Gae Bolg";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.scale = 0.5f;
@@ -24,6 +23,12 @@ namespace COFP.Projectiles.Melee.GaeBolg
 			projectile.melee = true;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gae Bolg");
+		}
+		
 		public override void AI()
         {
 			int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width, projectile.height, 24, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 0.4f);

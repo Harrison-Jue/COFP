@@ -13,13 +13,15 @@ namespace COFP.Buffs.MidasSprayed
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "CSprayed";
-			Main.buffTip[this.Type] = "Solidifying to Chlorophyte";
+			DisplayName.SetDefault("CSprayed");
+			Description.SetDefault("Solidifying to Chlorophyte");
 		}
+		
 		public override void Update(NPC npc, ref int buffIndex)
 		{
 			MBuff.MidasDeBuff(npc, npc.buffTime[buffIndex], 11, 128, -1);
 		}
+		
 		public override bool ReApply(NPC npc, int time, int buffIndex)
 		{
 			npc.buffTime[buffIndex] += 5;

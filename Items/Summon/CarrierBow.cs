@@ -11,13 +11,11 @@ namespace COFP.Items.Summon
     {
 		public override void SetDefaults()
 		{
-			item.name = "Bow of the Carrier";
 			item.damage = 30;
 			item.summon = true;
 			item.width = 16;
 			item.height = 32;
 			item.maxStack = 1;
-			item.toolTip = "Fires arrows that turn into planes.";
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.knockBack = 5f;
@@ -31,6 +29,13 @@ namespace COFP.Items.Summon
 			item.useAmmo = mod.ItemType("PaperAirplaneArrow");
 			item.mana = 20;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bow of the Carrier");
+			Tooltip.SetDefault("Fires arrows that turn into planes.");
+		}
+		
 		public override void AddRecipes()
 		{
 			if(MMod.testMode)

@@ -27,37 +27,37 @@ namespace COFP
 		public override void AddRecipeGroups()
 		{
 			RecipeGroup group;
-			group = new RecipeGroup(() => Lang.misc[37] + " Tier 2 Bars", new int[] 
+			group = new RecipeGroup(() => Lang.misc[37].Value + " Tier 2 Bars", new int[] 
 			{
 				ItemID.IronBar, 
 				ItemID.LeadBar
 			});
 			RecipeGroup.RegisterGroup("T2Bar", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " Tier 4 Bars", new int[] 
+			group = new RecipeGroup(() => Lang.misc[37].Value + " Tier 4 Bars", new int[] 
 			{
 				ItemID.GoldBar, 
 				ItemID.PlatinumBar
 			});
 			RecipeGroup.RegisterGroup("T4Bar", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " Evil Bars", new int[] 
+			group = new RecipeGroup(() => Lang.misc[37].Value + " Evil Bars", new int[] 
 			{
 				ItemID.DemoniteBar, 
 				ItemID.CrimtaneBar
 			});
 			RecipeGroup.RegisterGroup("EvilBar", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " Hardmode Evil Substance", new int[] 
+			group = new RecipeGroup(() => Lang.misc[37].Value + " Hardmode Evil Substance", new int[] 
 			{
 				ItemID.Ichor, 
 				ItemID.CursedFlame
 			});
 			RecipeGroup.RegisterGroup("EvilSubstanceHM", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " Evil Substance", new int[] 
+			group = new RecipeGroup(() => Lang.misc[37].Value + " Evil Substance", new int[] 
 			{
 				ItemID.RottenChunk, 
 				ItemID.Vertebrae
 			});
 			RecipeGroup.RegisterGroup("EvilSubstance", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " Evil Powder", new int[] 
+			group = new RecipeGroup(() => Lang.misc[37].Value + " Evil Powder", new int[] 
 			{
 				ItemID.VilePowder, 
 				ItemID.ViciousPowder

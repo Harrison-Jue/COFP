@@ -13,8 +13,8 @@ namespace COFP.Buffs.MidasSprayed
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "DCSprayed";
-			Main.buffTip[this.Type] = "Solidifying to Demonite or Crimtane";
+			DisplayName.SetDefault("DCSprayed");
+			Description.SetDefault("Solidifying to Demonite or Crimtane");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{

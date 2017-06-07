@@ -13,13 +13,15 @@ namespace COFP.Buffs.MidasSprayed
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "ILSprayed";
-			Main.buffTip[this.Type] = "Solidifying to Iron or Lead";
+			DisplayName.SetDefault("ILSprayed");
+			Description.SetDefault("Solidifying to Iron or Lead");
 		}
+		
 		public override void Update(NPC npc, ref int buffIndex)
 		{
 			MBuff.MidasDeBuff(npc, npc.buffTime[buffIndex], 2, 8, 82);
 		}
+		
 		public override bool ReApply(NPC npc, int time, int buffIndex)
 		{
 			npc.buffTime[buffIndex] += 5;

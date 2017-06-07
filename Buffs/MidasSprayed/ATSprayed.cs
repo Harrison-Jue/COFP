@@ -13,13 +13,15 @@ namespace COFP.Buffs.MidasSprayed
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			Main.buffName[this.Type] = "ATSprayed";
-			Main.buffTip[this.Type] = "Solidifying to Adamantite or Titanium";
+			DisplayName.SetDefault("ATSprayed");
+			Description.SetDefault("Solidifying to Adamantite or Titanium");
 		}
+		
 		public override void Update(NPC npc, ref int buffIndex)
 		{
 			MBuff.MidasDeBuff(npc, npc.buffTime[buffIndex], 10, 50, 30);
 		}
+		
 		public override bool ReApply(NPC npc, int time, int buffIndex)
 		{
 			npc.buffTime[buffIndex] += 5;

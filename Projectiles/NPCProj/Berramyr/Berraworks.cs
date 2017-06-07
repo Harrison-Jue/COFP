@@ -12,7 +12,6 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Berraworks";
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.scale = 2;
@@ -22,6 +21,12 @@ namespace COFP.Projectiles.NPCProj.Berramyr
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Berraworks");
+		}
+		
 		public override void AI()
 		{
 			if(projectile.ai[0] > 4f)

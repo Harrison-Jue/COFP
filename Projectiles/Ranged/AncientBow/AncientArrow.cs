@@ -11,7 +11,6 @@ namespace COFP.Projectiles.Ranged.AncientBow
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ancient Arrow";
 			projectile.width = 14;
 			projectile.height = 32;
 			projectile.scale = 0.75f;
@@ -25,11 +24,18 @@ namespace COFP.Projectiles.Ranged.AncientBow
 			projectile.extraUpdates = 1;
 			projectile.penetrate = -1;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ancient Arrow");
+		}
+		
 		public override void AI()
         {
 			int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width, projectile.height, 24, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 0.25f);
 			projectile.light = 0.9f;
 		}
+		
 		public override void Kill(int timeLeft)
         {
 			if(Main.netMode != 1)
